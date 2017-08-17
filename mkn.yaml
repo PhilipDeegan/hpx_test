@@ -1,0 +1,17 @@
+#! build
+
+name: hpx_test
+
+property:
+    org.boost.version: master
+    hpc.hpx.version: master
+    hpc.hpx.scm: https://github.com/mkn-nix/hpc.hpx
+
+src: .
+main: hello_world_client.cpp
+
+dep:
+  - name: hpc.hpx
+    version: ${hpc.hpx.version}
+    scm: ${hpc.hpx.scm}
+    profile: iostreams
